@@ -17,8 +17,8 @@ export function SiteLogo({ className, compact = false }: SiteLogoProps) {
         className
       )}
     >
-      <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground glow-primary">
-        <svg viewBox="0 0 24 24" className="size-4" aria-hidden="true">
+      <span className="flex size-9 items-center justify-center rounded-lg bg-primary text-primary-foreground glow-primary">
+        <svg viewBox="0 0 24 24" className="size-5" aria-hidden="true">
           <path
             d="M4 17V7l4.4 7.2L13 7v10M14.8 17l3.4-10 3.4 10"
             fill="none"
@@ -32,7 +32,7 @@ export function SiteLogo({ className, compact = false }: SiteLogoProps) {
       {compact ? (
         <span className="sr-only">{SITE_NAME}</span>
       ) : (
-        <span className="font-heading text-sm font-semibold tracking-tight">
+        <span className="font-heading text-base font-semibold tracking-tight">
           {SITE_NAME}
         </span>
       )}

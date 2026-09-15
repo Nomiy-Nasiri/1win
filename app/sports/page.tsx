@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { PageHero } from "@/components/content/page-hero";
+import { SportsLobbyHero } from "@/components/content/lobby-hero";
 import { SportCollection } from "@/components/content/sport-collection";
 import { Container } from "@/components/layout/container";
 import { sportCategories, sportStories } from "@/lib/content";
@@ -9,7 +9,7 @@ import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Sports",
-  description: `Independent sports briefings on ${SITE_NAME} — football, basketball, tennis, cricket, and live markets.`,
+  description: `Sports lobby on ${SITE_NAME} — football, basketball, tennis, cricket, and live markets. Each card opens 1win sports.`,
 };
 
 const sportIds = new Set<string>(sportCategories.map((item) => item.id));
@@ -25,14 +25,10 @@ export default async function SportsPage({
 
   return (
     <main id="main">
-      <PageHero
-        eyebrow="Game discovery"
-        title="Sports"
-        description="Match desks for football, basketball, tennis, cricket, hockey, MMA, and esports. Each card opens 1win sports with our referral."
-        destination="sports"
-      />
-      <Container className="py-8 md:py-10">
+      <Container className="space-y-6 py-5 md:py-7">
+        <SportsLobbyHero />
         <SportCollection
+          key={category}
           items={sportStories}
           initialCategory={category}
           syncUrl

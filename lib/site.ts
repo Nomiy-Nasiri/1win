@@ -16,6 +16,13 @@ export const NAV_ITEMS = [
 
 export type NavItem = (typeof NAV_ITEMS)[number];
 
+export const HEADER_ITEMS = [
+  { href: paths.home, label: "Home" },
+  { href: paths.casino, label: "Casino" },
+  { href: paths.games, label: "Games" },
+  { href: paths.sports, label: "Sports" },
+] as const;
+
 export const DOCK_ITEMS = NAV_ITEMS.filter((item) => item.inDock);
 
 export const LEGAL_LINKS = [
@@ -33,7 +40,7 @@ export const CATEGORY_GROUPS = [
       { href: `${paths.sports}?category=basketball`, label: "Basketball" },
       { href: `${paths.sports}?category=tennis`, label: "Tennis" },
       { href: `${paths.sports}?category=cricket`, label: "Cricket" },
-      { href: `${paths.sports}?category=esports`, label: "Esports" },
+      { href: `${paths.sports}?category=esports`, label: "eSports" },
     ],
   },
   {
@@ -41,7 +48,7 @@ export const CATEGORY_GROUPS = [
     items: [
       { href: paths.casino, label: "Casino" },
       { href: `${paths.casino}?category=slots`, label: "Slots" },
-      { href: `${paths.casino}?category=live`, label: "Live casino" },
+      { href: `${paths.casino}?category=live`, label: "Live Games" },
       { href: `${paths.casino}?category=tables`, label: "Table games" },
     ],
   },
@@ -50,7 +57,7 @@ export const CATEGORY_GROUPS = [
     items: [
       { href: paths.games, label: "Games" },
       { href: `${paths.games}?filter=popular`, label: "Popular" },
-      { href: `${paths.games}?filter=fast`, label: "Fast games" },
+      { href: `${paths.games}?filter=fast`, label: "Quick Games" },
       { href: `${paths.games}?filter=new`, label: "New" },
       { href: `${paths.games}?filter=featured`, label: "Featured" },
     ],

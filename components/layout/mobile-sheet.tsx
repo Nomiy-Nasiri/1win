@@ -23,9 +23,9 @@ export function MobileSheetTrigger() {
   return (
     <Button
       type="button"
-      variant="outline"
+      variant="ghost"
       size="icon"
-      className="size-11 lg:hidden"
+      className="size-10 lg:hidden"
       aria-label="Open menu"
       onClick={() => setSheetOpen(true)}
     >
@@ -54,8 +54,13 @@ export function MobileSheet() {
           <NavList variant="sheet" onNavigate={() => setSheetOpen(false)} />
         </div>
         <Separator />
-        <div className="p-4">
-          <AffiliateButton className="w-full">Play on 1win</AffiliateButton>
+        <div className="grid gap-2 p-4">
+          <AffiliateButton look="login" className="w-full" showIcon={false}>
+            Login
+          </AffiliateButton>
+          <AffiliateButton look="register" className="w-full" showIcon={false}>
+            Registration
+          </AffiliateButton>
         </div>
       </SheetContent>
     </Sheet>

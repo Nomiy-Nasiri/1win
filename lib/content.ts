@@ -82,16 +82,16 @@ export const sportCategories = [
   { id: "basketball", label: "Basketball" },
   { id: "tennis", label: "Tennis" },
   { id: "cricket", label: "Cricket" },
-  { id: "hockey", label: "Ice hockey" },
+  { id: "hockey", label: "Hockey" },
   { id: "mma", label: "MMA" },
-  { id: "esports", label: "Esports" },
+  { id: "esports", label: "eSports" },
   { id: "live", label: "Live" },
 ] as const;
 
 export const casinoCategories = [
   { id: "all", label: "Casino" },
   { id: "slots", label: "Slots" },
-  { id: "live", label: "Live casino" },
+  { id: "live", label: "Live Games" },
   { id: "tables", label: "Table games" },
 ] as const;
 
@@ -99,7 +99,7 @@ export const gameFilters = [
   { id: "popular", label: "Popular" },
   { id: "new", label: "New" },
   { id: "featured", label: "Featured" },
-  { id: "fast", label: "Fast games" },
+  { id: "fast", label: "Quick Games" },
 ] as const;
 
 const CARD_JPG = {
@@ -116,10 +116,9 @@ const CARD_JPG = {
 
 const GAME_COVERS: Record<string, readonly string[]> = {
   Slots: [CARD_JPG.casinoCard, CARD_JPG.casinoCover, CARD_JPG.images, CARD_JPG.moneywin],
-  "Live casino": [CARD_JPG.casinoCover, CARD_JPG.casinoCard, CARD_JPG.images6],
+  "Live Games": [CARD_JPG.casinoCover, CARD_JPG.casinoCard, CARD_JPG.images6],
   "Table games": [CARD_JPG.casinoCard, CARD_JPG.extra, CARD_JPG.images6],
-  Crash: [CARD_JPG.moneywin, CARD_JPG.moneywinCover, CARD_JPG.images],
-  Instant: [CARD_JPG.moneywin, CARD_JPG.images, CARD_JPG.extra, CARD_JPG.images6],
+  "Quick Games": [CARD_JPG.moneywin, CARD_JPG.moneywinCover, CARD_JPG.images, CARD_JPG.extra],
 };
 
 const SPORT_COVERS = [CARD_JPG.sports, CARD_JPG.sportsCover] as const;
@@ -134,7 +133,7 @@ function hashSeed(seed: string) {
 }
 
 function coverSrcFor(slug: string, category: string) {
-  const pool = GAME_COVERS[category] ?? GAME_COVERS.Instant;
+  const pool = GAME_COVERS[category] ?? GAME_COVERS["Quick Games"];
   return pool[hashSeed(slug) % pool.length];
 }
 
@@ -250,9 +249,9 @@ export const sportStories: PromoItem[] = [
   {
     id: "football-desk",
     slug: "football",
-    badge: "Football",
-    title: "League night briefing",
-    description: "Form, schedule density, and market shape for the weekend's headline clubs.",
+    badge: "Sports",
+    title: "Football",
+    description: "1win sportsbook: Premier League, La Liga, Serie A, Champions League, and more football markets.",
     href: entries.sport("football"),
     destination: "sports",
     cta: "Open on 1win",
@@ -268,9 +267,9 @@ export const sportStories: PromoItem[] = [
   {
     id: "basketball-desk",
     slug: "basketball",
-    badge: "Basketball",
-    title: "Pace and total watch",
-    description: "Tempo, rest days, and travel — the numbers that actually move a total.",
+    badge: "Sports",
+    title: "Basketball",
+    description: "1win sportsbook: NBA, EuroLeague, and other basketball leagues with prematch and live odds.",
     href: entries.sport("basketball"),
     destination: "sports",
     cta: "Open on 1win",
@@ -286,9 +285,9 @@ export const sportStories: PromoItem[] = [
   {
     id: "tennis-desk",
     slug: "tennis",
-    badge: "Tennis",
-    title: "Surface switcher",
-    description: "Who benefits when the tour changes speed, and how to read hold patterns.",
+    badge: "Sports",
+    title: "Tennis",
+    description: "1win sportsbook: ATP, WTA, Australian Open, Roland Garros, Wimbledon, and US Open.",
     href: entries.sport("tennis"),
     destination: "sports",
     cta: "Open on 1win",
@@ -304,9 +303,9 @@ export const sportStories: PromoItem[] = [
   {
     id: "cricket-desk",
     slug: "cricket",
-    badge: "Cricket",
-    title: "Powerplay window",
-    description: "Toss, pitch report, and death-over rates distilled into a readable match card.",
+    badge: "Sports",
+    title: "Cricket",
+    description: "1win sportsbook: IPL, Big Bash League, ICC World Cup, and other cricket markets.",
     href: entries.sport("cricket"),
     destination: "sports",
     cta: "Open on 1win",
@@ -322,9 +321,9 @@ export const sportStories: PromoItem[] = [
   {
     id: "hockey-desk",
     slug: "hockey",
-    badge: "Ice hockey",
-    title: "Period pace board",
-    description: "Rest, travel, and special-teams shape for the night's ice slate.",
+    badge: "Sports",
+    title: "Hockey",
+    description: "1win sportsbook: NHL, KHL, and other hockey leagues with live and prematch markets.",
     href: entries.sport("hockey"),
     destination: "sports",
     cta: "Open on 1win",
@@ -340,9 +339,9 @@ export const sportStories: PromoItem[] = [
   {
     id: "mma-desk",
     slug: "mma",
-    badge: "MMA",
-    title: "Card closer notes",
-    description: "Reach, pace, and finish rates without the weigh-in noise.",
+    badge: "Sports",
+    title: "MMA",
+    description: "1win sportsbook: UFC, Bellator, PFL, and other MMA cards.",
     href: entries.sport("mma"),
     destination: "sports",
     cta: "Open on 1win",
@@ -358,9 +357,9 @@ export const sportStories: PromoItem[] = [
   {
     id: "esports-desk",
     slug: "esports",
-    badge: "Esports",
-    title: "Map veto watch",
-    description: "Form on the current patch and why a veto can move a series.",
+    badge: "Sports",
+    title: "eSports",
+    description: "1win eSports: Counter-Strike 2, Dota 2, League of Legends, Valorant, and more.",
     href: entries.sport("esports"),
     destination: "sports",
     cta: "Open on 1win",
@@ -376,9 +375,9 @@ export const sportStories: PromoItem[] = [
   {
     id: "live-desk",
     slug: "live",
-    badge: "Live",
-    title: "In-play board",
-    description: "Live markets that stay readable after kickoff, tip, or first pitch.",
+    badge: "Sports",
+    title: "Live",
+    description: "1win Live betting: in-play markets after kickoff, tip-off, or first ball.",
     href: entries.sport("live"),
     destination: "sports",
     cta: "Open on 1win",
@@ -394,148 +393,151 @@ export const sportStories: PromoItem[] = [
 ];
 
 export const casinoItems: GameItem[] = [
-  makeGame("neon-hold", "Neon Hold", "Slots", "Northline", "slots", "popular", "reels", {
+  makeGame("fortune-tiger", "Fortune Tiger", "Slots", "PG Soft", "slots", "popular", "reels", {
     badge: "Hot",
     rating: 4.6,
   }),
-  makeGame("midnight-run", "Midnight Run", "Slots", "Northline", "slots", "new", "night", {
-    badge: "New",
-    rating: 4.5,
+  makeGame("gates-of-olympus", "Gates of Olympus", "Slots", "Pragmatic Play", "slots", "popular", "reels", {
+    rating: 4.7,
   }),
-  makeGame("aurora-spins", "Aurora Spins", "Slots", "Polar Deck", "slots", "new", "reels", {
-    badge: "New",
-    rating: 4.4,
-  }),
-  makeGame("city-lights", "City Lights", "Slots", "Polar Deck", "slots", "popular", "night", {
-    rating: 4.0,
-  }),
-  makeGame("volt-reels", "Volt Reels", "Slots", "Northline", "slots", "popular", "reels", {
-    rating: 4.3,
-  }),
-  makeGame("ember-crown", "Ember Crown", "Slots", "Velvet Rail", "slots", "featured", "reels", {
+  makeGame("sweet-bonanza", "Sweet Bonanza", "Slots", "Pragmatic Play", "slots", "featured", "reels", {
     badge: "Hot",
     rating: 4.7,
   }),
-  makeGame("polar-wilds", "Polar Wilds", "Slots", "Polar Deck", "slots", "new", "night", {
-    rating: 4.2,
-  }),
-  makeGame("quartz-line", "Quartz Line", "Slots", "Northline", "slots", "popular", "grid", {
-    rating: 4.1,
-  }),
-  makeGame("dusk-fortunes", "Dusk Fortunes", "Slots", "Polar Deck", "slots", "featured", "night", {
+  makeGame("1win-billion-bonanza", "1win Billion Bonanza", "Slots", "BGaming", "slots", "featured", "reels", {
     rating: 4.5,
   }),
-  makeGame("steel-orchard", "Steel Orchard", "Slots", "Oak & Spade", "slots", "popular", "reels", {
-    rating: 4.0,
+  makeGame("lady-wolf-moon", "Lady Wolf Moon", "Slots", "BGaming", "slots", "new", "night", {
+    badge: "New",
+    rating: 4.4,
   }),
-  makeGame("live-orbit", "Live Orbit", "Live casino", "Studio Arc", "live", "featured", "live", {
-    badge: "Live",
-    rating: 4.7,
-  }),
-  makeGame("signal-room", "Signal Room", "Live casino", "Studio Arc", "live", "popular", "live", {
+  makeGame("majestic-claws", "Majestic Claws", "Slots", "Spinomenal", "slots", "new", "reels", {
+    badge: "New",
     rating: 4.3,
   }),
-  makeGame("studio-hold", "Studio Hold", "Live casino", "Studio Arc", "live", "popular", "live", {
+  makeGame("book-of-merlin", "Book of Merlin", "Slots", "1X2gaming", "slots", "popular", "reels", {
+    rating: 4.2,
+  }),
+  makeGame("coin-volcano", "Coin Volcano", "Slots", "BGaming", "slots", "popular", "reels", {
+    rating: 4.1,
+  }),
+  makeGame("the-dog-house-megaways", "The Dog House Megaways", "Slots", "Pragmatic Play", "slots", "featured", "reels", {
+    rating: 4.5,
+  }),
+  makeGame("big-bass-bonanza", "Big Bass Bonanza", "Slots", "Pragmatic Play", "slots", "popular", "reels", {
+    rating: 4.4,
+  }),
+  makeGame("crazy-time", "Crazy Time", "Live Games", "Evolution", "live", "featured", "live", {
+    badge: "Live",
+    rating: 4.8,
+  }),
+  makeGame("lightning-roulette", "Lightning Roulette", "Live Games", "Evolution", "live", "popular", "live", {
+    badge: "Live",
+    rating: 4.6,
+  }),
+  makeGame("lightning-blackjack", "Lightning Blackjack", "Live Games", "Evolution", "live", "featured", "cards", {
+    rating: 4.5,
+  }),
+  makeGame("monopoly-live", "Monopoly Live", "Live Games", "Evolution", "live", "popular", "live", {
     badge: "Live",
     rating: 4.4,
   }),
-  makeGame("night-wheel", "Night Wheel", "Live casino", "Velvet Rail", "live", "new", "live", {
+  makeGame("dream-catcher", "Dream Catcher", "Live Games", "Evolution", "live", "new", "live", {
     badge: "New",
-    rating: 4.5,
+    rating: 4.3,
   }),
-  makeGame("dealer-north", "Dealer North", "Live casino", "Studio Arc", "live", "featured", "cards", {
-    rating: 4.6,
-  }),
-  makeGame("gold-pit", "Gold Pit", "Live casino", "Velvet Rail", "live", "popular", "live", {
+  makeGame("teen-patti", "Teen Patti", "Live Games", "Evolution", "live", "popular", "cards", {
+    badge: "Live",
     rating: 4.2,
   }),
-  makeGame("river-broadcast", "River Broadcast", "Live casino", "Oak & Spade", "live", "new", "live", {
+  makeGame("andar-bahar", "Andar Bahar", "Live Games", "Pragmatic Play", "live", "new", "cards", {
     badge: "Live",
     rating: 4.1,
   }),
-  makeGame("river-ace", "River Ace", "Table games", "Oak & Spade", "tables", "popular", "cards", {
+  makeGame("european-roulette", "European Roulette", "Table games", "Evolution", "tables", "popular", "cards", {
     rating: 4.4,
   }),
-  makeGame("crown-lane", "Crown Lane", "Table games", "Velvet Rail", "tables", "featured", "cards", {
+  makeGame("american-roulette", "American Roulette", "Table games", "Evolution", "tables", "popular", "cards", {
+    rating: 4.1,
+  }),
+  makeGame("blackjack", "Blackjack", "Table games", "Evolution", "tables", "featured", "cards", {
     badge: "Editor's Choice",
     rating: 4.8,
   }),
-  makeGame("deep-stack", "Deep Stack", "Table games", "Oak & Spade", "tables", "featured", "cards", {
-    rating: 4.6,
+  makeGame("baccarat", "Baccarat", "Table games", "Evolution", "tables", "featured", "cards", {
+    rating: 4.5,
   }),
-  makeGame("velvet-rail", "Velvet Rail", "Table games", "Velvet Rail", "tables", "popular", "cards", {
+  makeGame("texas-holdem", "Texas Hold'em", "Table games", "Evolution", "tables", "popular", "cards", {
     rating: 4.3,
   }),
-  makeGame("oak-draw", "Oak Draw", "Table games", "Oak & Spade", "tables", "new", "cards", {
+  makeGame("caribbean-poker", "Caribbean Poker", "Table games", "Evolution", "tables", "new", "cards", {
     badge: "New",
     rating: 4.2,
   }),
-  makeGame("midnight-hold", "Midnight Hold", "Table games", "Studio Arc", "tables", "popular", "night", {
-    rating: 4.1,
-  }),
-  makeGame("lattice-spin", "Lattice Spin", "Table games", "Polar Deck", "tables", "new", "grid", {
+  makeGame("roulette-x", "Roulette X", "Table games", "1win", "tables", "new", "grid", {
     rating: 4.0,
   }),
 ];
 
 export const gameItems: GameItem[] = [
-  makeGame("skyline-rise", "Skyline Rise", "Crash", "Pulseworks", "games", "fast", "night", {
+  makeGame("aviator", "Aviator", "Quick Games", "Spribe", "games", "fast", "night", {
+    badge: "Hot",
+    rating: 4.8,
+  }),
+  makeGame("lucky-jet", "Lucky Jet", "Quick Games", "SmartSoft", "games", "fast", "night", {
     badge: "Hot",
     rating: 4.7,
   }),
-  makeGame("jet-pulse", "Jet Pulse", "Crash", "Pulseworks", "games", "fast", "grid", {
-    rating: 4.5,
-  }),
-  makeGame("lucky-drift", "Lucky Drift", "Crash", "Northline", "games", "fast", "night", {
-    rating: 4.4,
-  }),
-  makeGame("mine-field", "Mine Field", "Instant", "Pulseworks", "games", "fast", "grid", {
-    rating: 4.3,
-  }),
-  makeGame("drop-line", "Drop Line", "Instant", "Polar Deck", "games", "fast", "grid", {
+  makeGame("jetx", "JetX", "Quick Games", "SmartSoft", "games", "fast", "grid", {
     rating: 4.6,
   }),
-  makeGame("coin-snap", "Coin Snap", "Instant", "Pulseworks", "games", "fast", "cards", {
-    rating: 4.1,
-  }),
-  makeGame("grid-rush", "Grid Rush", "Instant", "Pulseworks", "games", "fast", "grid", {
-    rating: 4.2,
-  }),
-  makeGame("fast-break", "Fast Break", "Instant", "Pulseworks", "games", "fast", "pitch", {
-    rating: 4.1,
-  }),
-  makeGame("rocket-fold", "Rocket Fold", "Crash", "Studio Arc", "games", "fast", "night", {
-    badge: "New",
-    rating: 4.4,
-  }),
-  makeGame("arcade-hold", "Arcade Hold", "Instant", "Velvet Rail", "games", "featured", "grid", {
-    badge: "Editor's Choice",
-    rating: 4.8,
-  }),
-  makeGame("pulse-lane", "Pulse Lane", "Instant", "Pulseworks", "games", "popular", "pitch", {
-    rating: 4.3,
-  }),
-  makeGame("night-circuit", "Night Circuit", "Instant", "Northline", "games", "popular", "night", {
-    rating: 4.2,
-  }),
-  makeGame("vault-run", "Vault Run", "Instant", "Oak & Spade", "games", "popular", "cards", {
-    rating: 4.0,
-  }),
-  makeGame("baseline", "Baseline", "Instant", "Pulseworks", "games", "featured", "grid", {
-    rating: 4.2,
-  }),
-  makeGame("analog-spark", "Analog Spark", "Instant", "Polar Deck", "games", "new", "reels", {
-    badge: "New",
-    rating: 4.4,
-  }),
-  makeGame("frost-tap", "Frost Tap", "Instant", "Polar Deck", "games", "new", "night", {
-    badge: "New",
-    rating: 4.3,
-  }),
-  makeGame("signal-dash", "Signal Dash", "Crash", "Studio Arc", "games", "featured", "live", {
+  makeGame("plinko", "Plinko", "Quick Games", "Spribe", "games", "fast", "grid", {
     rating: 4.5,
   }),
-  makeGame("ember-tap", "Ember Tap", "Instant", "Velvet Rail", "games", "popular", "reels", {
+  makeGame("mines", "Mines", "Quick Games", "1win", "games", "fast", "grid", {
+    rating: 4.4,
+  }),
+  makeGame("rocket-queen", "Rocket Queen", "Quick Games", "1win", "games", "fast", "night", {
+    badge: "New",
+    rating: 4.4,
+  }),
+  makeGame("crash", "Crash", "Quick Games", "1win", "games", "fast", "night", {
+    rating: 4.3,
+  }),
+  makeGame("balloon", "Balloon", "Quick Games", "SmartSoft", "games", "fast", "reels", {
+    rating: 4.2,
+  }),
+  makeGame("aviatrix", "Aviatrix", "Quick Games", "Aviatrix", "games", "featured", "night", {
+    rating: 4.5,
+  }),
+  makeGame("space-xy", "Space XY", "Quick Games", "BGaming", "games", "featured", "grid", {
+    badge: "Editor's Choice",
+    rating: 4.6,
+  }),
+  makeGame("rocketman", "Rocketman", "Quick Games", "SmartSoft", "games", "popular", "night", {
+    rating: 4.3,
+  }),
+  makeGame("rocket-x", "Rocket X", "Quick Games", "SmartSoft", "games", "popular", "grid", {
+    rating: 4.2,
+  }),
+  makeGame("pilot", "Pilot", "Quick Games", "SmartSoft", "games", "popular", "night", {
+    rating: 4.1,
+  }),
+  makeGame("zeppelin", "Zeppelin", "Quick Games", "SmartSoft", "games", "featured", "night", {
+    rating: 4.2,
+  }),
+  makeGame("spaceman", "Spaceman", "Quick Games", "Pragmatic Play", "games", "new", "night", {
+    badge: "New",
+    rating: 4.4,
+  }),
+  makeGame("chicken-road", "Chicken Road", "Quick Games", "InOut", "games", "new", "pitch", {
+    badge: "New",
+    rating: 4.3,
+  }),
+  makeGame("speed-and-cash", "Speed & Cash", "Quick Games", "1win", "games", "popular", "live", {
+    rating: 4.2,
+  }),
+  makeGame("thimbles", "Thimbles", "Quick Games", "SmartSoft", "games", "fast", "cards", {
     rating: 4.1,
   }),
 ];

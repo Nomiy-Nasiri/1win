@@ -15,7 +15,7 @@ export const listingGameFilters = [
 
 export const CASINO_CATEGORY_MAP = {
   slots: "Slots",
-  live: "Live casino",
+  live: "Live Games",
   tables: "Table games",
 } as const;
 

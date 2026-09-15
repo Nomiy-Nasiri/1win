@@ -42,10 +42,10 @@ export function CategoryNav({
             aria-selected={isActive}
             onClick={() => onChange?.(item.id)}
             className={cn(
-              "inline-flex h-9 shrink-0 items-center rounded-full border px-3.5 text-small font-medium transition-colors focus-visible:ring-3 focus-visible:ring-ring/50",
+              "inline-flex h-10 shrink-0 items-center rounded-full border px-4 text-[15px] font-medium transition-colors focus-visible:ring-3 focus-visible:ring-ring/50",
               isActive
-                ? "border-primary bg-primary text-primary-foreground"
-                : "border-border bg-secondary text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                ? "border-transparent bg-primary text-primary-foreground"
+                : "border-transparent bg-white/6 text-white/70 hover:bg-white/10 hover:text-white"
             )}
           >
             {item.label}

@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { CategoryNav } from "@/components/content/category-nav";
-import { PromoCard } from "@/components/content/promo-card";
 import { SectionHeader } from "@/components/content/section-header";
+import { SportTile } from "@/components/content/sport-tile";
 import type { PromoItem } from "@/lib/content";
 import { sportCategories } from "@/lib/content";
 import { sportsPath } from "@/lib/routes";
@@ -32,10 +32,6 @@ export function SportCollection({
   const router = useRouter();
   const [category, setCategory] = useState(initialCategory);
 
-  useEffect(() => {
-    setCategory(initialCategory);
-  }, [initialCategory]);
-
   const visible = useMemo(() => {
     if (category === "all") {
       return items;
@@ -61,9 +57,9 @@ export function SportCollection({
         ariaLabel="Sports categories"
         className="mb-4"
       />
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         {visible.map((item) => (
-          <PromoCard key={item.slug} item={item} />
+          <SportTile key={item.slug} item={item} />
         ))}
       </div>
     </div>

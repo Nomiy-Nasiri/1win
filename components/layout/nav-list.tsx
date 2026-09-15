@@ -76,19 +76,19 @@ export function NavList({
                 "rounded-md px-2.5 py-1.5 text-small font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground",
               variant === "desktop" && active && "bg-accent text-primary",
               variant === "sheet" &&
-                "flex min-h-11 items-center rounded-lg px-3 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground",
+                "flex min-h-12 items-center rounded-lg px-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground",
               variant === "sheet" && active && "bg-accent text-primary",
               variant === "dock" &&
-                "flex flex-col items-center justify-center gap-0.5 text-tertiary hover:text-foreground",
+                "flex flex-col items-center justify-center gap-0.5 text-white/45 hover:text-foreground",
               variant === "dock" && active && "text-primary",
               variant === "footer" &&
                 "text-small text-muted-foreground hover:text-primary"
             )}
           >
             {variant === "dock" && Icon ? (
-              <Icon className="size-5" aria-hidden="true" />
+              <Icon className="size-6" aria-hidden="true" />
             ) : null}
-            <span className={cn(variant === "dock" && "text-[0.65rem] font-medium")}>
+            <span className={cn(variant === "dock" && "text-xs font-medium")}>
               {item.label}
             </span>
           </Link>

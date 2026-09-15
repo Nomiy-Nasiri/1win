@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { CategoryNav } from "@/components/content/category-nav";
@@ -18,10 +18,6 @@ export function CasinoCollection({
 }: CasinoCollectionProps) {
   const router = useRouter();
   const [category, setCategory] = useState(initialCategory);
-
-  useEffect(() => {
-    setCategory(initialCategory);
-  }, [initialCategory]);
 
   const visible = filterCasinoGames(category);
 

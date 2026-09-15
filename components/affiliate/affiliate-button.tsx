@@ -14,6 +14,7 @@ type AffiliateButtonProps = {
   size?: "default" | "sm" | "lg" | "cta";
   showIcon?: boolean;
   destination?: AffiliateDestination;
+  look?: "default" | "login" | "register";
 };
 
 export function AffiliateButton({
@@ -22,6 +23,7 @@ export function AffiliateButton({
   size = "cta",
   showIcon = true,
   destination,
+  look = "default",
 }: AffiliateButtonProps) {
   const anchorProps = getAffiliateAnchorProps({ destination });
 
@@ -29,8 +31,14 @@ export function AffiliateButton({
     <Button
       asChild
       size={size}
+      variant={look === "login" ? "ghost" : "default"}
       className={cn(
-        "bg-gradient-to-b from-primary to-primary/85 glow-primary hover:from-primary hover:to-primary",
+        look === "default" &&
+          "bg-gradient-to-b from-primary to-primary/85 glow-primary hover:from-primary hover:to-primary",
+        look === "login" &&
+          "border-transparent bg-transparent text-foreground hover:bg-white/8",
+        look === "register" &&
+          "border-transparent bg-register text-register-foreground hover:bg-register/90",
         className
       )}
     >

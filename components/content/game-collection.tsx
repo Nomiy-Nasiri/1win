@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { CategoryNav, type CategoryOption } from "@/components/content/category-nav";
@@ -33,10 +33,6 @@ export function GameCollection({
 }: GameCollectionProps) {
   const router = useRouter();
   const [filter, setFilter] = useState(initialFilter);
-
-  useEffect(() => {
-    setFilter(initialFilter);
-  }, [initialFilter]);
 
   const visible =
     filter === "all" ? items : items.filter((item) => item.filter === filter);

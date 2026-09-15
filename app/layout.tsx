@@ -31,9 +31,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${outfit.variable} dark h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col pb-16 lg:pb-0">
+      <body className="flex min-h-full flex-col bg-background pb-[4.75rem] lg:pb-0">
         <TooltipProvider>
           <SiteShell>
             {children}
