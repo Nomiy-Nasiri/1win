@@ -1,19 +1,11 @@
 import { Gift } from "lucide-react";
 
+import { HeroCarousel, type HeroSlide } from "@/components/content/hero-carousel";
 import { MediaImage } from "@/components/media/media-image";
 import { getAffiliateAnchorProps } from "@/lib/affiliate";
 import type { Cover } from "@/lib/content";
 import { casinoItems } from "@/lib/content";
 import { cn } from "@/lib/utils";
-
-const mainCover: Cover = {
-  src: "/media/moneywincover.jpg",
-  alt: "Crypto casino promotional banner",
-  motif: "arena",
-  seed: "lobby-hero",
-  width: 1200,
-  height: 700,
-};
 
 const sideCover: Cover = {
   src: "/media/sports.jpg",
@@ -27,42 +19,177 @@ const sideCover: Cover = {
 const featuredGame =
   casinoItems.find((item) => item.slug === "fortune-tiger") ?? casinoItems[0];
 
-function HeroCta({ children }: { children: string }) {
-  return (
-    <span className="inline-flex h-12 w-fit items-center rounded-full bg-white px-7 text-base font-semibold text-black shadow-sm">
-      {children}
-    </span>
-  );
-}
+const homeSlides: HeroSlide[] = [
+  {
+    id: "crypto-casino",
+    eyebrow: "Crypto casino of the year",
+    title: "Crypto\ncasino #1",
+    cta: "Play",
+    destination: "home",
+    cover: {
+      src: "/media/moneywincover.jpg",
+      alt: "Crypto casino promotional banner",
+      motif: "arena",
+      seed: "lobby-hero",
+      width: 1200,
+      height: 700,
+    },
+  },
+  {
+    id: "sports",
+    eyebrow: "Live and prematch",
+    title: "Sports\nbetting",
+    cta: "Play",
+    destination: "sports",
+    cover: {
+      src: "/media/sports.jpg",
+      alt: "Sports promotional banner",
+      motif: "arena",
+      seed: "home-sports",
+      width: 1200,
+      height: 700,
+    },
+  },
+  {
+    id: "casino-floor",
+    eyebrow: "Slots, live, and tables",
+    title: "Casino\nlobby",
+    cta: "Play",
+    destination: "casino",
+    cover: {
+      src: "/media/sportscover.jpg",
+      alt: "Casino promotional banner",
+      motif: "cards",
+      seed: "home-casino",
+      width: 1200,
+      height: 700,
+    },
+  },
+  {
+    id: "quick-games",
+    eyebrow: "Aviator, Lucky Jet, and more",
+    title: "Quick\ngames",
+    cta: "Play",
+    destination: "games",
+    cover: {
+      src: "/media/moneywin.jpg",
+      alt: "Quick games promotional banner",
+      motif: "reels",
+      seed: "home-games",
+      width: 1200,
+      height: 700,
+    },
+  },
+];
+
+const casinoSlides: HeroSlide[] = [
+  {
+    id: "mission-complete",
+    title: "Mission Complete:\n€10,000 from SmartSoft",
+    cta: "Participate",
+    destination: "casino",
+    tone: "mission",
+  },
+  {
+    id: "crypto-casino",
+    eyebrow: "Crypto casino of the year",
+    title: "Crypto\ncasino #1",
+    cta: "Play",
+    destination: "home",
+    cover: {
+      src: "/media/moneywincover.jpg",
+      alt: "Crypto casino promotional banner",
+      motif: "arena",
+      seed: "casino-crypto",
+      width: 1200,
+      height: 700,
+    },
+  },
+  {
+    id: "live-casino",
+    eyebrow: "Dealers in real time",
+    title: "Live\ncasino",
+    cta: "Play",
+    destination: "live",
+    cover: {
+      src: "/media/casino_cover.jpg",
+      alt: "Live casino promotional banner",
+      motif: "live",
+      seed: "casino-live",
+      width: 1200,
+      height: 700,
+    },
+  },
+  {
+    id: "free-money",
+    eyebrow: "Promos and prizes",
+    title: "Free\nmoney",
+    cta: "Play",
+    destination: "home",
+    tone: "gold",
+    cover: {
+      src: "/media/sports.jpg",
+      alt: "Free money promotional banner",
+      motif: "night",
+      seed: "casino-bonus",
+      width: 800,
+      height: 500,
+    },
+  },
+];
+
+const sportsSlides: HeroSlide[] = [
+  {
+    id: "sports",
+    eyebrow: "Live and prematch",
+    title: "Sports",
+    cta: "Play",
+    destination: "sports",
+    cover: {
+      src: "/media/sports.jpg",
+      alt: "Sports promotional banner",
+      motif: "arena",
+      seed: "sports-hero",
+      width: 1200,
+      height: 700,
+    },
+  },
+  {
+    id: "football",
+    eyebrow: "Premier League and more",
+    title: "Football",
+    cta: "Play",
+    destination: "sports",
+    cover: {
+      src: "/media/sportscover.jpg",
+      alt: "Football promotional banner",
+      motif: "pitch",
+      seed: "sports-football",
+      width: 1200,
+      height: 700,
+    },
+  },
+  {
+    id: "live",
+    eyebrow: "In-play markets",
+    title: "Live\nbetting",
+    cta: "Play",
+    destination: "sports",
+    cover: {
+      src: "/media/sports.jpg",
+      alt: "Live betting promotional banner",
+      motif: "live",
+      seed: "sports-live",
+      width: 1200,
+      height: 700,
+    },
+  },
+];
 
 export function HomeLobbyHero() {
   return (
     <div className="grid gap-3 lg:grid-cols-[minmax(0,1.7fr)_minmax(280px,0.85fr)]">
-      <a
-        {...getAffiliateAnchorProps({ destination: "home" })}
-        className="group relative min-h-[220px] overflow-hidden rounded-[22px] outline-none ring-1 ring-white/8 focus-visible:ring-3 focus-visible:ring-ring/50 md:min-h-[280px]"
-      >
-        <MediaImage
-          cover={mainCover}
-          priority
-          sizes="(max-width: 1024px) 100vw, 65vw"
-          className="absolute inset-0 size-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-black/20" />
-        <div className="relative flex h-full min-h-[220px] flex-col justify-between p-5 md:min-h-[280px] md:p-8">
-          <div className="max-w-md space-y-3">
-            <p className="text-xs font-semibold tracking-[0.18em] text-white/70 uppercase">
-              Crypto casino of the year
-            </p>
-            <h1 className="font-heading text-[2.4rem] leading-[0.95] font-extrabold tracking-tight text-white uppercase sm:text-[3.35rem]">
-              Crypto
-              <br />
-              casino #1
-            </h1>
-          </div>
-          <HeroCta>Play</HeroCta>
-        </div>
-      </a>
+      <HeroCarousel slides={homeSlides} />
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
         <a
@@ -109,21 +236,7 @@ export function CasinoLobbyHero() {
 
   return (
     <div className="grid gap-3 lg:grid-cols-[minmax(0,1.55fr)_minmax(280px,0.9fr)]">
-      <a
-        {...getAffiliateAnchorProps({ destination: "casino" })}
-        className="relative min-h-[220px] overflow-hidden rounded-[22px] outline-none ring-1 ring-white/8 focus-visible:ring-3 focus-visible:ring-ring/50 md:min-h-[250px]"
-      >
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,#1e293b_0%,#0f172a_55%,#111827_100%)]" />
-        <div className="absolute top-1/2 right-6 size-36 -translate-y-1/2 rounded-[28px] bg-[linear-gradient(160deg,#ff4d4d,#7f1d1d)] shadow-[0_20px_50px_rgba(0,0,0,0.35)] sm:right-10 sm:size-44" />
-        <div className="relative flex h-full min-h-[220px] flex-col justify-between p-5 md:min-h-[250px] md:p-8">
-          <h2 className="max-w-sm font-heading text-[2.1rem] leading-[1.05] font-extrabold tracking-tight text-white sm:text-[2.6rem]">
-            Mission Complete:
-            <br />
-            €10,000 from SmartSoft
-          </h2>
-          <HeroCta>Participate</HeroCta>
-        </div>
-      </a>
+      <HeroCarousel slides={casinoSlides} />
 
       <a
         {...featuredProps}
@@ -162,40 +275,5 @@ export function CasinoLobbyHero() {
 }
 
 export function SportsLobbyHero() {
-  return (
-    <a
-      {...getAffiliateAnchorProps({ destination: "sports" })}
-      className="relative block min-h-[220px] overflow-hidden rounded-[22px] outline-none ring-1 ring-white/8 focus-visible:ring-3 focus-visible:ring-ring/50 md:min-h-[260px]"
-    >
-      <MediaImage
-        cover={{
-          src: "/media/sports.jpg",
-          alt: "Sports promotional banner",
-          motif: "arena",
-          seed: "sports-hero",
-          width: 1200,
-          height: 700,
-        }}
-        priority
-        sizes="100vw"
-        className="absolute inset-0 size-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
-      <div className="relative flex min-h-[220px] flex-col justify-between p-5 md:min-h-[260px] md:p-8">
-        <div className="max-w-lg">
-          <p className="text-xs font-semibold tracking-[0.18em] text-white/70 uppercase">
-            Live and prematch
-          </p>
-          <h1 className="mt-2 font-heading text-[2.4rem] leading-[0.95] font-extrabold tracking-tight text-white uppercase sm:text-[3.35rem]">
-            Sports
-          </h1>
-          <p className="mt-3 max-w-md text-base text-white/75">
-            Football, basketball, tennis, cricket, and more — open the 1win
-            sportsbook with our referral.
-          </p>
-        </div>
-        <HeroCta>Play</HeroCta>
-      </div>
-    </a>
-  );
+  return <HeroCarousel slides={sportsSlides} />;
 }
