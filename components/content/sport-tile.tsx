@@ -28,12 +28,18 @@ export function SportTile({ item, className }: SportTileProps) {
         sizes="(max-width: 768px) 100vw, 25vw"
         className="absolute inset-0 size-full object-cover transition-transform duration-200 group-hover:scale-[1.04]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
       <div className="absolute inset-x-3 bottom-3">
-        <p className="text-xs font-semibold tracking-[0.14em] text-white/65 uppercase">
+        <p className="flex items-center gap-1.5 text-xs font-semibold tracking-[0.14em] text-white/65 uppercase">
+          {item.badge === "Live" ? (
+            <span className="size-2 rounded-full bg-[#3DDC6B] shadow-[0_0_8px_#3DDC6B]" />
+          ) : null}
           {item.badge}
         </p>
-        <h3 className="text-xl font-extrabold text-white sm:text-2xl">{item.title}</h3>
+        <h3 className="mt-1 text-xl font-extrabold text-white sm:text-2xl">{item.title}</h3>
+        {item.description ? (
+          <p className="mt-1 line-clamp-2 text-sm text-white/75">{item.description}</p>
+        ) : null}
       </div>
     </a>
   );

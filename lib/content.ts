@@ -392,6 +392,143 @@ export const sportStories: PromoItem[] = [
   },
 ];
 
+const SPORT_LEAGUES: Record<string, { title: string; description: string }> = {
+  football: {
+    title: "Popular leagues",
+    description: "Premier League, La Liga, Serie A, and Champions League.",
+  },
+  basketball: {
+    title: "Popular leagues",
+    description: "NBA, EuroLeague, and other basketball leagues.",
+  },
+  tennis: {
+    title: "Popular tours",
+    description: "ATP, WTA, and Grand Slam markets.",
+  },
+  cricket: {
+    title: "Popular leagues",
+    description: "IPL, Big Bash League, and ICC competitions.",
+  },
+  hockey: {
+    title: "Popular leagues",
+    description: "NHL, KHL, and other hockey leagues.",
+  },
+  mma: {
+    title: "Popular promotions",
+    description: "UFC, Bellator, PFL, and other MMA cards.",
+  },
+  esports: {
+    title: "Popular titles",
+    description: "Counter-Strike 2, Dota 2, League of Legends, and Valorant.",
+  },
+  live: {
+    title: "Popular sports",
+    description: "Football, basketball, tennis, cricket, and more in-play.",
+  },
+};
+
+function makeSportMarket(
+  sportId: string,
+  sportLabel: string,
+  marketId: string,
+  badge: string,
+  title: string,
+  description: string,
+  motif: CoverMotif
+): PromoItem {
+  const slug = `${sportId}-${marketId}`;
+
+  return {
+    id: slug,
+    slug,
+    badge,
+    title,
+    description,
+    href: entries.sport(sportId),
+    destination: "sports",
+    cta: "Open on 1win",
+    cover: {
+      src: sportCoverSrc(slug),
+      alt: `${title} — ${sportLabel}`,
+      motif,
+      seed: slug,
+      width: 800,
+      height: 500,
+    },
+  };
+}
+
+export function getSportMarketCards(sportId: string): PromoItem[] {
+  const sport = sportCategories.find((item) => item.id === sportId);
+
+  if (!sport || sport.id === "all") {
+    return [];
+  }
+
+  const label = sport.label;
+  const leagues = SPORT_LEAGUES[sport.id] ?? {
+    title: "Popular leagues",
+    description: `${label} leagues and competitions on 1win.`,
+  };
+
+  return [
+    makeSportMarket(
+      sport.id,
+      label,
+      "featured",
+      "Featured",
+      "Featured matches",
+      `Top ${label} fixtures on the 1win sportsbook.`,
+      "arena"
+    ),
+    makeSportMarket(
+      sport.id,
+      label,
+      "live",
+      "Live",
+      "Live",
+      `In-play ${label} markets after the event starts.`,
+      "live"
+    ),
+    makeSportMarket(
+      sport.id,
+      label,
+      "upcoming",
+      "Upcoming",
+      "Upcoming",
+      `Next ${label} events, prematch markets, and start times.`,
+      "grid"
+    ),
+    makeSportMarket(
+      sport.id,
+      label,
+      "leagues",
+      "Leagues",
+      leagues.title,
+      leagues.description,
+      "pitch"
+    ),
+    makeSportMarket(
+      sport.id,
+      label,
+      "outrights",
+      "Outrights",
+      "Outrights",
+      `Winner, champion, and tournament markets for ${label}.`,
+      "night"
+    ),
+    makeSportMarket(
+      sport.id,
+      label,
+      "today",
+      "Today",
+      "Today's markets",
+      `Today's ${label} card — live and prematch on 1win.`,
+      "editorial"
+    ),
+  ];
+}
+
 export const casinoItems: GameItem[] = [
   makeGame("fortune-tiger", "Fortune Tiger", "Slots", "PG Soft", "slots", "popular", "reels", {
     badge: "Hot",

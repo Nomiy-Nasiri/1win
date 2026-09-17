@@ -6,8 +6,7 @@ import { useRouter } from "next/navigation";
 import { CategoryNav } from "@/components/content/category-nav";
 import { SectionHeader } from "@/components/content/section-header";
 import { SportTile } from "@/components/content/sport-tile";
-import type { PromoItem } from "@/lib/content";
-import { sportCategories } from "@/lib/content";
+import { getSportMarketCards, sportCategories, type PromoItem } from "@/lib/content";
 import { sportsPath } from "@/lib/routes";
 
 type SportCollectionProps = {
@@ -37,7 +36,7 @@ export function SportCollection({
       return items;
     }
 
-    return items.filter((item) => item.slug === category);
+    return getSportMarketCards(category);
   }, [category, items]);
 
   return (
@@ -57,7 +56,7 @@ export function SportCollection({
         ariaLabel="Sports categories"
         className="mb-4"
       />
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {visible.map((item) => (
           <SportTile key={item.slug} item={item} />
         ))}
