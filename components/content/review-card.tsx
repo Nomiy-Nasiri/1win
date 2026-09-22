@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 type ReviewCardProps = {
   item: ReviewItem;
   className?: string;
-};
+};                                              
 
 export function ReviewCard({ item, className }: ReviewCardProps) {
   return (
