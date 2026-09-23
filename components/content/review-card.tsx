@@ -25,7 +25,7 @@ export function ReviewCard({ item, className }: ReviewCardProps) {
           <MediaImage
             cover={item.cover}
             sizes="(max-width: 768px) 100vw, 33vw"
-            className="absolute inset-0 size-full object-cover"
+            className="absolute inset-0 size-full object-cover"                                   
           />
           <Badge variant="premium" className="absolute top-3 left-3">
             {item.score.toFixed(1)}

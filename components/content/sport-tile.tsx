@@ -21,7 +21,7 @@ export function SportTile({ item, className }: SportTileProps) {
       className={cn(
         "group relative block aspect-[16/10] overflow-hidden rounded-[16px] outline-none ring-1 ring-white/8 transition-transform duration-200 hover:-translate-y-0.5 focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:hover:translate-y-0",
         className
-      )}
+      )}                                  
     >
       <MediaImage
         cover={item.cover}

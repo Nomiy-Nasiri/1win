@@ -26,7 +26,7 @@ const homeSlides: HeroSlide[] = [
     title: "Crypto\ncasino #1",
     cta: "Play",
     destination: "home",
-    cover: {
+    cover: {                                                 
       src: "/media/moneywincover.jpg",
       alt: "Crypto casino promotional banner",
       motif: "arena",

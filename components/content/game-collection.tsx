@@ -17,7 +17,7 @@ type GameCollectionProps = {
   href?: string;
   initialFilter?: string;
   syncUrl?: boolean;
-  filters?: readonly CategoryOption[];
+  filters?: readonly CategoryOption[];                  
   showHeader?: boolean;
 };
 

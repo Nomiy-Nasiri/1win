@@ -19,7 +19,7 @@ export function SectionHeader({
   className,
 }: SectionHeaderProps) {
   return (
-    <div
+    <div                 
       className={cn(
         "mb-4 flex items-end justify-between gap-4",
         className
@@ -43,3 +43,4 @@ export function SectionHeader({
     </div>
   );
 }
+            

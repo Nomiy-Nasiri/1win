@@ -16,7 +16,7 @@ export function ArticleCard({
   featured = false,
 }: ArticleCardProps) {
   return (
-    <Link
+    <Link                          
       href={item.href}
       id={item.slug}
       className={cn(
