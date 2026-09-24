@@ -43,7 +43,7 @@ export function HeaderNav({
       <a
         {...freeMoneyProps}
         onClick={onNavigate}
-        className="inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-[15px] font-medium text-white/70 transition-colors hover:bg-white/8 hover:text-white"
+        className="inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-[15px] font-medium text-muted-foreground transition-colors hover:bg-foreground/8 hover:text-foreground"
       >
         <Gift className="size-4" />
         Free money
@@ -83,7 +83,7 @@ function HeaderPill({
         "inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-[15px] font-medium transition-colors",
         active
           ? "bg-primary text-primary-foreground"
-          : "text-white/70 hover:bg-white/8 hover:text-white"
+          : "text-muted-foreground hover:bg-foreground/8 hover:text-foreground"
       )}
     >
       {Icon ? <Icon className="size-4" /> : null}

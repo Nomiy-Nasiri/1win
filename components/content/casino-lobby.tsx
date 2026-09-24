@@ -58,7 +58,7 @@ export function CasinoLobby({ initialChip = "lobby" }: { initialChip?: string })
               "inline-flex h-10 shrink-0 items-center rounded-full px-4 text-[15px] font-medium transition-colors",
               subnav === item.id
                 ? "bg-primary text-primary-foreground"
-                : "bg-white/6 text-white/70 hover:bg-white/10 hover:text-white"
+                : "bg-foreground/8 text-muted-foreground hover:bg-foreground/12 hover:text-foreground"
             )}
           >
             {item.label}
@@ -70,12 +70,12 @@ export function CasinoLobby({ initialChip = "lobby" }: { initialChip?: string })
 
       <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_220px]">
         <label className="relative block">
-          <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-white/35" />
+          <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search"
-            className="h-12 rounded-xl border-white/8 bg-[#1a1a1a] pr-3 pl-10 text-base"
+            className="h-12 rounded-xl border-border bg-card pr-3 pl-10 text-base"
           />
         </label>
         <label className="block">
@@ -83,7 +83,7 @@ export function CasinoLobby({ initialChip = "lobby" }: { initialChip?: string })
           <select
             value={provider}
             onChange={(event) => setProvider(event.target.value)}
-            className="h-12 w-full rounded-xl border border-white/8 bg-[#1a1a1a] px-3 text-base text-foreground outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="h-12 w-full rounded-xl border border-border bg-card px-3 text-base text-foreground outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             <option value="">Providers</option>
             {providers.map((name) => (
@@ -110,7 +110,7 @@ export function CasinoLobby({ initialChip = "lobby" }: { initialChip?: string })
               "inline-flex h-10 shrink-0 items-center rounded-full px-4 text-[15px] font-medium transition-colors",
               chip === item.id
                 ? "bg-primary text-primary-foreground"
-                : "bg-white/6 text-white/70 hover:bg-white/10 hover:text-white"
+                : "bg-foreground/8 text-muted-foreground hover:bg-foreground/12 hover:text-foreground"
             )}
           >
             {item.label}
@@ -126,7 +126,7 @@ export function CasinoLobby({ initialChip = "lobby" }: { initialChip?: string })
             ))}
           </div>
         ) : (
-          <p className="py-10 text-center text-sm text-white/50">
+          <p className="py-10 text-center text-sm text-muted-foreground">
             No games match this search.
           </p>
         )

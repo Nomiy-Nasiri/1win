@@ -79,7 +79,7 @@ export function NavList({
                 "flex min-h-12 items-center rounded-lg px-3 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground",
               variant === "sheet" && active && "bg-accent text-primary",
               variant === "dock" &&
-                "flex flex-col items-center justify-center gap-0.5 text-white/45 hover:text-foreground",
+                "flex flex-col items-center justify-center gap-0.5 text-muted-foreground hover:text-foreground",
               variant === "dock" && active && "text-primary",
               variant === "footer" &&
                 "text-small text-muted-foreground hover:text-primary"

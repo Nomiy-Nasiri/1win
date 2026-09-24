@@ -10,7 +10,7 @@ export function MobileDock() {
   const { sheetOpen, setSheetOpen } = useNav();
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/8 bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:hidden">
       <NavList
         variant="dock"
         className="h-[3.75rem]"
@@ -22,7 +22,7 @@ export function MobileDock() {
             aria-expanded={sheetOpen}
             aria-label="Open menu"
             className={cn(
-              "flex flex-col items-center justify-center gap-0.5 text-white/45 transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
+              "flex flex-col items-center justify-center gap-0.5 text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
               sheetOpen && "text-primary"
             )}
           >

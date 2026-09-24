@@ -3,6 +3,7 @@
 import { AffiliateButton } from "@/components/affiliate/affiliate-button";
 import { Container } from "@/components/layout/container";
 import { HeaderNav } from "@/components/layout/header-nav";
+import { LightControl } from "@/components/layout/light-slider";
 import { MobileSheetTrigger } from "@/components/layout/mobile-sheet";
 import { SiteLogo } from "@/components/layout/site-logo";
 
@@ -13,6 +14,7 @@ export function SiteHeader() {
         <SiteLogo className="[&_span:last-child]:text-lg [&_span:last-child]:font-extrabold" />
         <HeaderNav />
         <div className="ml-auto flex items-center gap-1 sm:gap-2">
+          <LightControl />
           <AffiliateButton
             look="login"
             size="sm"

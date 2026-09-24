@@ -42,12 +42,12 @@ export function GamesLobby({ initialFilter = "all" }: GamesLobbyProps) {
   return (
     <div className="space-y-6">
       <label className="relative block">
-        <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-white/35" />
+        <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
         <Input
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Search"
-          className="h-12 rounded-xl border-white/8 bg-[#1a1a1a] pr-3 pl-10 text-base"
+          className="h-12 rounded-xl border-border bg-card pr-3 pl-10 text-base"
         />
       </label>
 
@@ -61,7 +61,7 @@ export function GamesLobby({ initialFilter = "all" }: GamesLobbyProps) {
               "inline-flex h-10 shrink-0 items-center rounded-full px-4 text-[15px] font-medium transition-colors",
               filter === item.id
                 ? "bg-primary text-primary-foreground"
-                : "bg-white/6 text-white/70 hover:bg-white/10 hover:text-white"
+                : "bg-foreground/8 text-muted-foreground hover:bg-foreground/12 hover:text-foreground"
             )}
           >
             {item.label}

@@ -36,7 +36,7 @@ export function AffiliateButton({
         look === "default" &&
           "bg-gradient-to-b from-primary to-primary/85 glow-primary hover:from-primary hover:to-primary",
         look === "login" &&
-          "border-transparent bg-transparent text-foreground hover:bg-white/8",
+          "border-transparent bg-transparent text-foreground hover:bg-foreground/8",
         look === "register" &&
           "border-transparent bg-register text-register-foreground hover:bg-register/90",
         className

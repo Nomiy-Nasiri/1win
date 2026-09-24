@@ -108,7 +108,7 @@ function RowArrow({
       type="button"
       aria-label={label}
       onClick={onClick}
-      className="inline-flex size-9 items-center justify-center rounded-full bg-white/8 text-foreground transition-colors hover:bg-white/14 focus-visible:ring-3 focus-visible:ring-ring/50"
+      className="inline-flex size-9 items-center justify-center rounded-full bg-foreground/8 text-foreground transition-colors hover:bg-foreground/14 focus-visible:ring-3 focus-visible:ring-ring/50"
     >
       {children}
     </button>
