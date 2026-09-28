@@ -14,12 +14,12 @@ export function GameCard({ item, className, priority = false }: GameCardProps) {
   const anchorProps = getAffiliateAnchorProps({ destination: item.destination });
   const palette = getGamePalette(item.slug);
   const playing = mockPlayingCount(item.slug);
-
+                         
   return (
     <a
       {...anchorProps}
       id={item.slug}
-      aria-label={`Play ${item.title} on 1win`}
+      aria-label={`Play ${item.title} on 1win`}                    
       className={cn(
         "group relative block aspect-[3/4] overflow-hidden rounded-[16px] outline-none ring-1 ring-white/5 transition-transform duration-200 hover:-translate-y-1 focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:transition-none motion-reduce:hover:translate-y-0",
         className
@@ -32,7 +32,7 @@ export function GameCard({ item, className, priority = false }: GameCardProps) {
         }}
       />
       <MediaImage
-        cover={item.cover}
+        cover={item.cover}                   
         sizes="(max-width: 768px) 48vw, 16vw"
         priority={priority}
         className="absolute inset-0 size-full object-cover opacity-45 mix-blend-overlay transition-transform duration-200 group-hover:scale-105 motion-reduce:group-hover:scale-100"
@@ -43,7 +43,7 @@ export function GameCard({ item, className, priority = false }: GameCardProps) {
           {item.provider}
         </p>
         <h3 className="mt-1 line-clamp-3 text-[17px] leading-[1.05] font-extrabold tracking-tight text-white uppercase drop-shadow-sm sm:text-[19px] lg:text-[21px]">
-          {item.title}
+          {item.title}               
         </h3>
       </div>
       <div className="absolute inset-x-3 bottom-2.5 flex items-center gap-1.5 text-xs font-medium text-white/90 sm:text-[13px]">

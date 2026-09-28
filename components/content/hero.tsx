@@ -15,6 +15,7 @@ const heroCover: Cover = {
   seed: "hero",
   width: 1200,
   height: 900,
+                                 
 };
 
 export function Hero() {

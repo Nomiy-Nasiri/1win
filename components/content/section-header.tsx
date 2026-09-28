@@ -11,7 +11,7 @@ type SectionHeaderProps = {
   className?: string;
 };
 
-export function SectionHeader({
+export function SectionHeader({                             
   title,
   description,
   href,
@@ -19,7 +19,7 @@ export function SectionHeader({
   className,
 }: SectionHeaderProps) {
   return (
-    <div                 
+    <div                                     
       className={cn(
         "mb-4 flex items-end justify-between gap-4",
         className
