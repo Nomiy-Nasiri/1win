@@ -8,6 +8,7 @@ import {
   Dices,
   Gamepad2,
   Home,
+  Info,
   Newspaper,
   Star,
   Trophy,
@@ -25,6 +26,7 @@ const NAV_ICONS = {
   Reviews: Star,
   Guides: BookOpen,
   Blog: Newspaper,
+  About: Info,
 } as const;
 
 type NavListVariant = "desktop" | "sheet" | "dock" | "footer";

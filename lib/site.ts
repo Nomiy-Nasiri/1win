@@ -12,6 +12,7 @@ export const NAV_ITEMS = [
   { href: paths.reviews, label: "Reviews", inDock: false },
   { href: paths.guides, label: "Guides", inDock: false },
   { href: paths.blog, label: "Blog", inDock: false },
+  { href: paths.about, label: "About", inDock: false },
 ] as const;
 
 export type NavItem = (typeof NAV_ITEMS)[number];
@@ -21,6 +22,7 @@ export const HEADER_ITEMS = [
   { href: paths.casino, label: "Casino" },
   { href: paths.games, label: "Games" },
   { href: paths.sports, label: "Sports" },
+  { href: paths.about, label: "About" },
 ] as const;
 
 export const DOCK_ITEMS = NAV_ITEMS.filter((item) => item.inDock);

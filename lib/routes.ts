@@ -6,6 +6,7 @@ export const paths = {
   reviews: "/reviews",
   guides: "/guides",
   blog: "/blog",
+  about: "/about",
 } as const;
 
 export type ListPath = (typeof paths)[keyof typeof paths];
