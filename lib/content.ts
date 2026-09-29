@@ -74,6 +74,7 @@ export type ArticleItem = {
   category: string;
   readTime: string;
   cover: Cover;
+  paragraphs?: string[];
 };
 
 export const sportCategories = [
@@ -814,10 +815,11 @@ export const blogItems: ArticleItem[] = [
   {
     id: "weekend-slate",
     slug: "weekend-slate",
-    title: "The weekend slate, without the shout",
-    excerpt: "Four fixtures, one live table trend, and the games people actually reopened.",
+    title: "How to read a weekend sports slate before you bet",
+    excerpt:
+      "A calmer way to scan football, basketball, tennis, cricket, and eSports fixtures without treating a preview as a prediction.",
     href: entries.post("weekend-slate"),
-    category: "Roundup",
+    category: "Sports",
     readTime: "7 min",
     cover: {
       src: CARD_JPG.sportsCover,
@@ -827,15 +829,22 @@ export const blogItems: ArticleItem[] = [
       width: 960,
       height: 540,
     },
+    paragraphs: [
+      "A weekend slate is a list of fixtures, not a set of instructions. WinMoney groups sports notes by football, basketball, tennis, cricket, and eSports so you can see what the desk is covering before you open a sportsbook. Start with the sport you already follow. If a match is not one you can explain in a sentence, it is a poor place to begin.",
+      "Read the category, the teams or players, and the time. Then stop. A short brief can tell you that a league is in season or that a derby is on the card. It cannot tell you the result. Prices move because new team news, weather, and public interest show up. A line you saw in the morning is not a promise by evening.",
+      "Compare only what you understand. Football markets are not the same shape as tennis markets, and cricket sessions do not behave like basketball quarters. If two previews use the same excited language, ignore the volume and look at the fixture itself. The useful question is whether you know the competition well enough to notice when a page is vague.",
+      "Keep the stake decision separate from the reading. Set a limit before you visit an operator, and treat anything left in the account as money you can lose. This site is independent coverage. It is not the 1win sportsbook, and a story here is not a tip.",
+    ],
   },
   {
     id: "blue-hour-markets",
     slug: "blue-hour-markets",
-    title: "Blue-hour markets: why late lines feel louder",
-    excerpt: "A look at liquidity, public money, and why the last hour before a match feels different.",
+    title: "Why sports odds move in the last hour before a match",
+    excerpt:
+      "Late lines feel louder because team news, liquidity, and public money arrive together. Here is what that movement does and does not mean.",
     href: entries.post("blue-hour-markets"),
-    category: "Analysis",
-    readTime: "9 min",
+    category: "Sports",
+    readTime: "8 min",
     cover: {
       src: CARD_JPG.extra,
       alt: "Abstract market movement editorial cover",
@@ -844,15 +853,46 @@ export const blogItems: ArticleItem[] = [
       width: 960,
       height: 540,
     },
+    paragraphs: [
+      "The hour before kickoff is when a sports market looks busiest. Confirmed lineups, late injuries, and a rush of casual interest all land in a short window. Prices can shift because more money is available, not because someone discovered a secret. A moving number is a description of the market, not a signal that you should chase it.",
+      "Liquidity is simply how much can be matched without the price jumping. A major football league is usually deeper than a small tennis match or a niche eSports map. In a thin market, one burst of bets moves the line farther. That swing can look meaningful and still be noise.",
+      "Public money often follows the famous team, the home side, or the name on the poster. Books adjust. That does not make the other side a bargain. If you cannot name why the price changed, you do not have an edge. You have a feeling produced by a clock.",
+      "A practical habit is to decide your maximum loss before the line starts moving, then leave the page if the number is no longer one you would have taken earlier. Late movement is a reason to slow down. It is not a reason to raise the stake.",
+    ],
+  },
+  {
+    id: "casino-categories",
+    slug: "casino-categories",
+    title: "Slots, live games, and table games: what the labels mean",
+    excerpt:
+      "Casino lobbies reuse the same three words. This is how those categories differ, and what a listing can tell you before you play.",
+    href: entries.post("casino-categories"),
+    category: "Casino",
+    readTime: "8 min",
+    cover: {
+      src: CARD_JPG.casinoCover,
+      alt: "Abstract casino category editorial cover",
+      motif: "cards",
+      seed: "blog-casino",
+      width: 960,
+      height: 540,
+    },
+    paragraphs: [
+      "Most casino menus sort games into slots, live games, and table games. The labels are useful only if you know what sits behind them. Slots are automated games with reels or grids, a published set of rules, and a return that plays out over a very large number of spins. A single session can look nothing like that long-run figure.",
+      "Live games stream a presenter and use physical cards, wheels, or dice. You are still playing a casino game with a house edge. The studio, the chat, and the pace are presentation. They do not change the fact that the game is built to keep an advantage over time.",
+      "Table games are the familiar rulesets: blackjack, roulette, baccarat, and their variants. Speed versions shorten the time between decisions. Faster games mean the same edge is applied more often per hour. A listing that says “fast” is describing pace, not a better chance.",
+      "On WinMoney, the casino page filters those groups so you can see titles, providers, and covers before you follow an affiliate link. The card is a catalog entry. It is not a rating of how lucky the game will be, and the outbound link is marked because we may earn a commission if you continue to 1win.",
+    ],
   },
   {
     id: "catalog-notes",
     slug: "catalog-notes",
-    title: "Catalog notes from a week in the lobby",
-    excerpt: "New titles, retired thumbnails, and the filters we wish every casino used.",
+    title: "How to compare casino games without trusting the thumbnail",
+    excerpt:
+      "Providers, filters, and badges are the parts of a lobby that survive after the artwork changes. Use them before you open a title.",
     href: entries.post("catalog-notes"),
-    category: "Lobby",
-    readTime: "5 min",
+    category: "Games",
+    readTime: "6 min",
     cover: {
       src: CARD_JPG.images6,
       alt: "Abstract lobby catalog editorial cover",
@@ -861,5 +901,35 @@ export const blogItems: ArticleItem[] = [
       width: 960,
       height: 540,
     },
+    paragraphs: [
+      "A lobby thumbnail is advertising. Bright art, a “new” ribbon, or a jackpot figure is there to be tapped. The details that travel with the game matter more: the provider, the category, and whether the title is filed under popular, new, featured, or quick play. Those fields are how you compare two games that look alike.",
+      "Provider names are a stand-in for who built the math and the rules. They are not a quality medal. Still, seeing the name lets you notice when a lobby is repeating one studio or mixing several. If a card has no provider, treat the listing as incomplete and read the game rules inside the operator before you stake anything.",
+      "Filters such as popular and new describe attention, not value. Popular means other people opened it. New means it was added recently. Featured means the lobby is pointing at it. None of those words change the house edge. Quick games simply resolve faster, which raises the number of bets you can place in a sitting.",
+      "Use the games and casino pages here as a map, then confirm the rules on the site you actually play. Covers on this desk can be artwork when a studio image is missing. The motif is a placeholder, not a claim about the game.",
+    ],
+  },
+  {
+    id: "responsible-play-notes",
+    slug: "responsible-play-notes",
+    title: "A responsible play checklist before you open a casino or sportsbook",
+    excerpt:
+      "Limits, time, and a reason to stop. A short checklist for adults who treat sports and casino play as entertainment.",
+    href: entries.post("responsible-play-notes"),
+    category: "Responsible play",
+    readTime: "6 min",
+    cover: {
+      src: CARD_JPG.moneywinCover,
+      alt: "Abstract responsible play editorial cover",
+      motif: "grid",
+      seed: "blog-limits",
+      width: 960,
+      height: 540,
+    },
+    paragraphs: [
+      "Play is for adults 18 and over, and only with money you can lose without changing rent, food, or bills. Decide the amount before you log in. Write it down if you need to. Once it is gone, the session is over, even if a game is still on the screen or a match is still in the second half.",
+      "Time limits matter as much as money limits. Fast slots and live rounds are built to start the next bet quickly. Set an alarm. When it rings, close the tab. Taking a break is part of the plan, not a failure of nerve.",
+      "Do not chase a loss. Increasing the stake to “get back” turns a finished session into a larger one. Do not borrow, do not use money set aside for someone else, and do not treat a preview, a review score, or a jackpot banner as a reason the next result will be different.",
+      "If gambling stops being entertainment, stop. Talk to someone you trust and look for help where you live. WinMoney publishes independent notes and marked affiliate links. We are not the operator, we do not hold your balance, and nothing on this page is a strategy for winning.",
+    ],
   },
 ];

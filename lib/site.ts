@@ -11,7 +11,7 @@ export const NAV_ITEMS = [
   { href: paths.games, label: "Games", inDock: true },
   { href: paths.reviews, label: "Reviews", inDock: false },
   { href: paths.guides, label: "Guides", inDock: false },
-  { href: paths.blog, label: "Blog", inDock: false },
+  { href: paths.blog, label: "Blogs", inDock: false },
   { href: paths.about, label: "About", inDock: false },
 ] as const;
 
@@ -22,6 +22,7 @@ export const HEADER_ITEMS = [
   { href: paths.casino, label: "Casino" },
   { href: paths.games, label: "Games" },
   { href: paths.sports, label: "Sports" },
+  { href: paths.blog, label: "Blogs" },
   { href: paths.about, label: "About" },
 ] as const;
 

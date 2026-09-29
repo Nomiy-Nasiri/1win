@@ -25,7 +25,7 @@ const NAV_ICONS = {
   Games: Gamepad2,
   Reviews: Star,
   Guides: BookOpen,
-  Blog: Newspaper,
+  Blogs: Newspaper,
   About: Info,
 } as const;
 

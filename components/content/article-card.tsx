@@ -8,17 +8,19 @@ type ArticleCardProps = {
   item: ArticleItem;
   className?: string;
   featured?: boolean;
+  anchor?: boolean;
 };
 
 export function ArticleCard({
   item,
   className,
   featured = false,
+  anchor = true,
 }: ArticleCardProps) {
   return (
     <Link                          
       href={item.href}
-      id={item.slug}
+      id={anchor ? item.slug : undefined}
       className={cn(
         "group grid scroll-mt-20 overflow-hidden rounded-xl bg-card ring-1 ring-border transition-transform duration-200 hover:-translate-y-0.5 hover:ring-primary/35 focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:hover:translate-y-0",
         featured ? "md:grid-cols-[1.3fr_1fr]" : "grid-rows-[auto_1fr]",

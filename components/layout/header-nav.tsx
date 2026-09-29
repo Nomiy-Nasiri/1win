@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Dices, Gamepad2, Gift, Home, Info, Trophy } from "lucide-react";
+import { Dices, Gamepad2, Gift, Home, Info, Newspaper, Trophy } from "lucide-react";
 
 import { getAffiliateAnchorProps } from "@/lib/affiliate";
 import { isNavItemActive } from "@/lib/nav";
@@ -14,6 +14,7 @@ const ICONS = {
   Casino: Dices,
   Games: Gamepad2,
   Sports: Trophy,
+  Blogs: Newspaper,
   About: Info,
 } as const;
 
