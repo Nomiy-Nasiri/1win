@@ -4,6 +4,10 @@ export const SITE_NAME = "WinMoney";
 
 export const SITE_TAGLINE = "Independent coverage of sports, casino, and games";
 
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+).replace(/\/$/, "");
+
 export const NAV_ITEMS = [
   { href: paths.home, label: "Home", inDock: true },
   { href: paths.sports, label: "Sports", inDock: true },

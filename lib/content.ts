@@ -757,6 +757,11 @@ export const guideItems: ArticleItem[] = [
       width: 960,
       height: 540,
     },
+    paragraphs: [
+      "A match card is a short record of who is playing, when, and which competition it belongs to. Read the names, the start time, and the sport before you look at any price. If you cannot explain the fixture in one sentence, leave it.",
+      "Form and rest are context, not a forecast. A team that won last week can lose tonight. Note injuries only when they are confirmed, and ignore rumours that a preview repeats without a source. Market movement tells you that the price changed. It does not tell you who will win.",
+      "Give the card two minutes, then decide whether you know this competition well enough to continue. WinMoney lists fixtures so you can orient yourself. The page is not a tip and not the sportsbook.",
+    ],
   },
   {
     id: "live-casino-pacing",
@@ -774,6 +779,11 @@ export const guideItems: ArticleItem[] = [
       width: 960,
       height: 540,
     },
+    paragraphs: [
+      "Live tables deal on a clock. A slower blackjack table gives you time to see the rules and the stake before the next hand. A speed table shortens that gap. The house edge does not shrink because the studio looks calm.",
+      "Between hands, check the limit, the side bets, and whether you still recognise the game you opened. Chat and a presenter are presentation. They are not advice. If the pace makes you skip the stake, switch to a slower table or stop.",
+      "Set a time limit before you sit down. When it ends, leave even if a shoe is unfinished. Faster tables simply apply the same edge more often per hour.",
+    ],
   },
   {
     id: "session-limits",
@@ -791,6 +801,11 @@ export const guideItems: ArticleItem[] = [
       width: 960,
       height: 540,
     },
+    paragraphs: [
+      "A session limit is a number you choose before you play: a maximum loss and a maximum time. Write both down. Money set aside for rent, food, or bills is not a bankroll. This is for adults 18 and over.",
+      "Keep the limit where you will see it, and stop when either cap is hit. Do not raise it mid-session to recover a loss. Closing the tab is the rule working, not a reason to open another game.",
+      "If you cannot keep the limit, stop playing. Talk to someone you trust and look for help where you live. A guide can remind you of the rule. It cannot keep it for you.",
+    ],
   },
   {
     id: "new-player-map",
@@ -808,6 +823,11 @@ export const guideItems: ArticleItem[] = [
       width: 1200,
       height: 900,
     },
+    paragraphs: [
+      "Start with the desk that matches what you already understand. Sports is for fixtures. Casino splits slots, live games, and table games. Games adds popular, new, featured, and quick-play filters. Read the listing before you follow any outbound link.",
+      "Reviews score a product and list pros and cons. Guides are short walkthroughs. Blogs explain how a slate, a category, or a limit works. None of them is an account, a balance, or an official 1win site.",
+      "When you do leave WinMoney, the button is marked as an affiliate link and opens in a new tab. We may earn a commission if you continue. Decide your limit first, then decide whether a visit is worth it.",
+    ],
   },
 ];
 

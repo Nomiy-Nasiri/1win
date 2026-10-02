@@ -54,9 +54,9 @@ export function gamesPath(filter?: string) {
 export const entries = {
   game: (slug: string) => `${paths.games}#${slug}`,
   sport: (slug: string) => sportsPath(slug),
-  review: (slug: string) => `${paths.reviews}#${slug}`,
-  guide: (slug: string) => `${paths.guides}#${slug}`,
-  post: (slug: string) => `${paths.blog}#${slug}`,
+  review: (slug: string) => `${paths.reviews}/${slug}`,
+  guide: (slug: string) => `${paths.guides}/${slug}`,
+  post: (slug: string) => `${paths.blog}/${slug}`,
   details: {
     game: (slug: string) => `${paths.games}/${slug}`,
     sport: (slug: string) => `${paths.sports}/${slug}`,

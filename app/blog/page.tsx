@@ -40,24 +40,6 @@ export default function BlogPage() {
             ))}
           </div>
         </div>
-        <div className="mx-auto max-w-3xl space-y-12">
-          {blogItems.map((item) => (
-            <article key={item.slug} id={item.slug} className="scroll-mt-24 space-y-4">
-              <p className="text-caption uppercase text-tertiary">
-                {item.category}
-                <span aria-hidden="true"> · </span>
-                {item.readTime}
-              </p>
-              <h2 className="text-h2">{item.title}</h2>
-              <p className="text-body text-foreground">{item.excerpt}</p>
-              {item.paragraphs?.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)} className="text-body text-muted-foreground">
-                  {paragraph}
-                </p>
-              ))}
-            </article>
-          ))}
-        </div>
       </Container>
     </main>
   );
